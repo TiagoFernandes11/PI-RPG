@@ -18,7 +18,7 @@ public class Application {
     }
 
     @Bean
-    @GetMapping()
+    @GetMapping("/cadastro")
     public ModelAndView hello(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("cadastro.html");
