@@ -6,8 +6,8 @@ const isenha2 = document.querySelector("#inputPassword2");
 let arrEmails = [];
 
 //só Deus sabe pq isso nao ta funcionando
-function cadastrar() {
-  preencherArrayComEmailsCadastrados();
+async function cadastrar() {
+  await preencherArrayComEmailsCadastrados();
   console.log("Array de email: ", arrEmails);
   console.log("Email sendo checado: ", Iemail.value);
   console.log(arrEmails.includes("Tem no array? ", Iemail.value));
@@ -39,7 +39,7 @@ function limpar() {
   isenha2.value = "";
 }
 
-function preencherArrayComEmailsCadastrados() {
+async function preencherArrayComEmailsCadastrados() {
   const items = fetch("http://localhost:8080/api/clients")
     .then((data) => {
       return data.json();
