@@ -21,7 +21,7 @@ public class Application {
     @GetMapping("/cadastro")
     public ModelAndView hello(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("cadastro.html");
+        modelAndView.setViewName("template/cadastro.html");
         return modelAndView;
     }
 

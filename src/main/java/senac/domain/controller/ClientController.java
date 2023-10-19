@@ -5,7 +5,7 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import senac.domain.entity.Client;
+import senac.domain.model.Client;
 import senac.domain.repository.ClientRepository;
 
 import java.util.List;
