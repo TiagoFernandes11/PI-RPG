@@ -9,7 +9,7 @@ public class Main {
         *  Na interface visual, vai ter uma área/botão para cada tipo de dado
         *  Terá os seguintes tipos de dados: D4, D6, D8, D12, D20, D100 e Dado Especial
         *  O jogador precisará apenas informar
-        *
+        *  Precisamos destacar os casos de 20 e 1 natural!!!!!
         */
 
 
@@ -19,10 +19,14 @@ public class Main {
 
         Dado roladorLaEle = new Dado();
         roladorLaEle.rolagemDeDados(10, TipoDado.D4);
+        roladorLaEle.rolagemDeDados(3, TipoDado.D6);
+        roladorLaEle.rolagemDeDados(6, TipoDado.D20);
+        roladorLaEle.rolagemDeDados(4, TipoDado.D100);
         roladorLaEle.mostrarRolagem();
+        roladorLaEle.imprimirTodasRolagens();
 
-        roladorLaEle.rolagemDeDados(3, TipoDado.D100);
-        roladorLaEle.mostrarRolagem();
+//        roladorLaEle.rolagemDeDados(3, TipoDado.D100);
+//        roladorLaEle.mostrarRolagem();
 
 //        roladorLaEle.rolagemDeDados(2, TipoDado.D6);
 
