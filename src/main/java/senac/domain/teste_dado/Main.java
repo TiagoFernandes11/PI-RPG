@@ -23,7 +23,7 @@ public class Main {
         roladorLaEle.rolagemDeDados(6, TipoDado.D20);
         roladorLaEle.rolagemDeDados(4, TipoDado.D100);
         roladorLaEle.mostrarRolagem();
-        roladorLaEle.imprimirTodasRolagens();
+        roladorLaEle.getLog().imprimirLog();
 
 //        roladorLaEle.rolagemDeDados(3, TipoDado.D100);
 //        roladorLaEle.mostrarRolagem();

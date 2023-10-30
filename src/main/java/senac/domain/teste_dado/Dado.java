@@ -1,8 +1,10 @@
 package senac.domain.teste_dado;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.ListIterator;
-
+@Data
 public class Dado {
 
     private int valorTotRolagem;
@@ -26,7 +28,7 @@ public class Dado {
         }
         valorTotRolagem = resultado;
 
-        log.salvarRolagem(valoresDados);
+        log.salvarRolagem(valoresDados, valorTotRolagem);
 
         System.out.printf("Rolagem com Sucesso!!!\n");
     }
