@@ -3,6 +3,7 @@ package senac.domain.funcionalidades.funcionalidade_dado;
 import lombok.Data;
 
 import java.util.ArrayList;
+
 @Data
 public class Rolagem {
 
@@ -10,9 +11,29 @@ public class Rolagem {
     private ArrayList<Integer> valoresDados;
     private final LogRolagens log = new LogRolagens();
 
-    public Rolagem(int valorTotRolagem, ArrayList<Integer> valoresDados) {
+    public Rolagem(int qtd, TipoDado dado) {
+
+        ArrayList<Integer> valoresDados = new ArrayList<>();
+        int valorTotRolagem = 0;
+
+        for (int i = 0; i < qtd; i++) {
+            int numeroRandomizado = (int) (Math.random() * dado.getLados()) + 1;
+            valoresDados.add(numeroRandomizado);
+        }
+
+        for (Integer valor : valoresDados) {
+            valorTotRolagem += valor;
+        }
+
+        log.salvarRolagem(rolar(valorTotRolagem, valoresDados));
+
+        System.out.printf("Rolagem com Sucesso!!!\n");
+    }
+
+    private Rolagem rolar(int valorTotRolagem, ArrayList<Integer> valoresDados) {
         this.valorTotRolagem = valorTotRolagem;
         this.valoresDados = valoresDados;
+        return this;
     }
 
     public int getValorTotRolagem() {
@@ -30,11 +51,14 @@ public class Rolagem {
     public void setValoresDados(ArrayList<Integer> valoresDados) {
         this.valoresDados = valoresDados;
     }
-// mostrar rolagem atual
-
+    // mostrar rolagem atual
 
     @Override
     public String toString() {
+        return "Rolagem{" + "valorTotRolagem=" + valorTotRolagem + ", valoresDados=" + valoresDados + '}';
+    }
+
+    public String getTotEValores() {
         return "(" + valorTotRolagem + ") " + this.getValoresDados();
     }
 }

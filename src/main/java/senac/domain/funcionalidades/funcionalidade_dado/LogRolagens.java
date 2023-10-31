@@ -33,7 +33,7 @@ public class LogRolagens {
 
         int index = 0;
         for (Rolagem rolagem : todasRolagens) {
-             sb.append("Rolagem " + (index+1) + ": - "  + rolagem.toString() + "\n");
+             sb.append("Rolagem " + (index+1) + ": - "  + rolagem.getTotEValores() + "\n");
             index++;
         }
 
@@ -42,7 +42,7 @@ public class LogRolagens {
 
     public String getStrUltimaRolagem(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Rolagem : " + todasRolagens.get(todasRolagens.size()-1).toString());
+        sb.append("Rolagem: " + todasRolagens.get(todasRolagens.size()-1).getTotEValores());
         return sb.toString();
     }
 

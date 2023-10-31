@@ -1,29 +1,12 @@
 package senac.domain.funcionalidades.funcionalidade_dado;
 
-import java.util.ArrayList;
-
 public class LancadorDeDados{
 
     private final LogRolagens log = new LogRolagens();
 
     public void rolagemDeDados(int qtd, TipoDado dado) {
-
-        ArrayList<Integer> valoresDados = new ArrayList<>();
-        int valorTotRolagem = 0;
-
-        for (int i = 0; i < qtd; i++) {
-            int numeroRandomizado = (int) (Math.random() * dado.getLados()) + 1;
-            valoresDados.add(numeroRandomizado);
-        }
-
-        for (Integer valor : valoresDados) {
-            valorTotRolagem += valor;
-        }
-
-        Rolagem rolagem = new Rolagem(valorTotRolagem, valoresDados);
+        Rolagem rolagem = new Rolagem(qtd, dado);
         log.salvarRolagem(rolagem);
-
-        System.out.printf("Rolagem com Sucesso!!!\n");
     }
 
     public void imprimirLog(){
