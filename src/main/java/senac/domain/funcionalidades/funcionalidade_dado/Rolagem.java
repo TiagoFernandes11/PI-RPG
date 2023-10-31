@@ -58,7 +58,7 @@ public class Rolagem {
         return "Rolagem{" + "valorTotRolagem=" + valorTotRolagem + ", valoresDados=" + valoresDados + '}';
     }
 
-    public String getTotEValores() {
+    public String getTotEValores(){
         return "(" + valorTotRolagem + ") " + this.getValoresDados();
     }
 }
