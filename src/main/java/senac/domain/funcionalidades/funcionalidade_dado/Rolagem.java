@@ -3,7 +3,6 @@ package senac.domain.funcionalidades.funcionalidade_dado;
 import lombok.Data;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 @Data
 public class Rolagem {
 

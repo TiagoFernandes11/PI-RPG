@@ -17,8 +17,6 @@ public class Main {
 //        TipoDado D4 = TipoDado.D4;
 //        System.out.println(D4.getLados());
 
-        LancadorDeDados lancador = new LancadorDeDados();
-
         LancadorDeDados roladorLaEle = new LancadorDeDados();
         roladorLaEle.rolagemDeDados(10, TipoDado.D4);
         roladorLaEle.rolagemDeDados(3, TipoDado.D6);
