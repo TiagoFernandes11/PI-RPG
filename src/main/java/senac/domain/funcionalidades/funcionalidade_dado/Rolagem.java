@@ -25,12 +25,12 @@ public class Rolagem {
             valorTotRolagem += valor;
         }
 
-        log.salvarRolagem(rolar(valorTotRolagem, valoresDados));
+        log.salvarRolagem(salvarValores(valorTotRolagem, valoresDados));
 
         System.out.printf("Rolagem com Sucesso!!!\n");
     }
 
-    private Rolagem rolar(int valorTotRolagem, ArrayList<Integer> valoresDados) {
+    private Rolagem salvarValores(int valorTotRolagem, ArrayList<Integer> valoresDados) {
         this.valorTotRolagem = valorTotRolagem;
         this.valoresDados = valoresDados;
         return this;
