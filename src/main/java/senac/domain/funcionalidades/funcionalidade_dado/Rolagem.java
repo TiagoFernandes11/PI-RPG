@@ -36,6 +36,10 @@ public class Rolagem {
 
     @Override
     public String toString() {
+        return "Rolagem{" + "valorTotRolagem=" + valorTotRolagem + ", valoresDados=" + valoresDados + '}';
+    }
+
+    public String getTotEValores(){
         return "(" + valorTotRolagem + ") " + this.getValoresDados();
     }
 }
