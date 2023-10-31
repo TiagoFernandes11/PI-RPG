@@ -17,13 +17,15 @@ public class Main {
 //        TipoDado D4 = TipoDado.D4;
 //        System.out.println(D4.getLados());
 
-        Dado roladorLaEle = new Dado();
+        LancadorDeDados lancador = new LancadorDeDados();
+
+        LancadorDeDados roladorLaEle = new LancadorDeDados();
         roladorLaEle.rolagemDeDados(10, TipoDado.D4);
         roladorLaEle.rolagemDeDados(3, TipoDado.D6);
         roladorLaEle.rolagemDeDados(6, TipoDado.D20);
         roladorLaEle.rolagemDeDados(4, TipoDado.D100);
-        roladorLaEle.mostrarRolagem();
-        roladorLaEle.getLog().imprimirLog();
+        roladorLaEle.mostrarUltimaRolagem();
+        roladorLaEle.imprimirLog();
 
 //        roladorLaEle.rolagemDeDados(3, TipoDado.D100);
 //        roladorLaEle.mostrarRolagem();

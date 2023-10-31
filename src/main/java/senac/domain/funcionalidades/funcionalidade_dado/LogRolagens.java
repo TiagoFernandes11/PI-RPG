@@ -2,13 +2,14 @@ package senac.domain.funcionalidades.funcionalidade_dado;
 
 import lombok.Data;
 
+
 import java.util.ArrayList;
 import java.util.ListIterator;
 
 @Data
 public class LogRolagens {
 
-    private ArrayList<ArrayList<Integer>> todasRolagens;
+    private ArrayList<Rolagem> todasRolagens;
     private ArrayList<Integer> somaRolagens;
 
     public LogRolagens() {
@@ -18,18 +19,52 @@ public class LogRolagens {
 
     // invocar ele em toda a rolagem de dados
 
-    public void salvarRolagem(ArrayList<Integer> rolagem, Integer somaRolagem){
+    public void salvarRolagem(Rolagem rolagem){
         todasRolagens.add(rolagem);
-        somaRolagens.add(somaRolagem);
+        somaRolagens.add(rolagem.getValorTotRolagem());
         System.out.println("Rolagem salva no Log");
     }
 
-    public void imprimirLog(){
-        String s = "";
-        ListIterator<ArrayList<Integer>> listIterator = todasRolagens.listIterator();
-        while(listIterator.hasNext()){
-            s += "Rolagem " + (listIterator.nextIndex() + 1) + " : " + "soma("+ somaRolagens.get(listIterator.nextIndex()) +") - "  + listIterator.next() + "\n";
+    public String getLog(){
+        StringBuilder sb = new StringBuilder();
+//        ListIterator<ArrayList<Integer>> listIterator = todasRolagens.listIterator();
+//        while(listIterator.hasNext()){
+//            s += "Rolagem " + (listIterator.nextIndex() + 1) + ": " + "soma("+ somaRolagens.get(listIterator.nextIndex()) +") - "  + listIterator.next() + "\n";
+//        }
+
+        int index = 0;
+        for (Rolagem rolagem : todasRolagens) {
+             sb.append("Rolagem " + (index+1) + ": - "  + rolagem.toString() + "\n");
+            index++;
         }
-        System.out.println(s);
+
+        return sb.toString();
     }
+
+    public String getStrUltimaRolagem(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Rolagem : " + todasRolagens.get(todasRolagens.size()-1).toString());
+        return sb.toString();
+    }
+
+
+
+
+
+//    public void imprimirTodasRolagens(){
+//
+//        // Iterando sobre o ArrayList principal
+//        ListIterator<ArrayList<Integer>> iterator = log.getTodasRolagens().listIterator();
+//        while (iterator.hasNext()) {
+//            ArrayList<Integer> rolagem = iterator.next();
+//            System.out.println("Rolagem " + iterator.nextIndex() + " - " + rolagem.toString());
+//            /*
+//            // Iterando sobre os ArrayLists internos
+//            Iterator<Integer> iteratorInterno = rolagem.iterator();
+//            while (iteratorInterno.hasNext()) {
+//                Integer valor = iteratorInterno.next();
+//                System.out.println("Valor: " + valor);
+//            }*/
+//        }
+//    }
 }
