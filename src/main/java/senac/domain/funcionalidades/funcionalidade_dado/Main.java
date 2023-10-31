@@ -1,4 +1,4 @@
-package senac.domain.teste_dado;
+package senac.domain.funcionalidades.funcionalidade_dado;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package senac.domain.teste_personagem;
+package senac.domain.funcionalidades.funcionalidade_personagem;
 
 public class Main {
 

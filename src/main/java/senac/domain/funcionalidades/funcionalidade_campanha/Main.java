@@ -1,4 +1,4 @@
-package senac.domain.teste_campanha;
+package senac.domain.funcionalidades.funcionalidade_campanha;
 
 public class Main {
 
