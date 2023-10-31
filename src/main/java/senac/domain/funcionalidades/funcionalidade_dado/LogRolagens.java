@@ -4,7 +4,6 @@ import lombok.Data;
 
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 @Data
 public class LogRolagens {

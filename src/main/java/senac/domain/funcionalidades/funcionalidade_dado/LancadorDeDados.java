@@ -1,7 +1,6 @@
 package senac.domain.funcionalidades.funcionalidade_dado;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 public class LancadorDeDados{
 
@@ -12,8 +11,6 @@ public class LancadorDeDados{
         ArrayList<Integer> valoresDados = new ArrayList<>();
         int valorTotRolagem = 0;
 
-
-        int resultado = 0;
         for (int i = 0; i < qtd; i++) {
             int numeroRandomizado = (int) (Math.random() * dado.getLados()) + 1;
             valoresDados.add(numeroRandomizado);
