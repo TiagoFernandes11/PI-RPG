@@ -19,11 +19,12 @@ public class Rolagem {
         for (int i = 0; i < qtd; i++) {
             int numeroRandomizado = (int) (Math.random() * dado.getLados()) + 1;
             valoresDados.add(numeroRandomizado);
+            valorTotRolagem += numeroRandomizado;
         }
 
-        for (Integer valor : valoresDados) {
-            valorTotRolagem += valor;
-        }
+//        for (Integer valor : valoresDados) {
+//            valorTotRolagem += valor;
+//        }
 
         log.salvarRolagem(salvarValores(valorTotRolagem, valoresDados));
 

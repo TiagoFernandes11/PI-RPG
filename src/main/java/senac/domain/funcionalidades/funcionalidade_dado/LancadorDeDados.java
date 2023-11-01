@@ -13,7 +13,7 @@ public class LancadorDeDados{
         System.out.println(log.getLog());
     }
 
-    public void mostrarUltimaRolagem(){
+    public void imprimirUltimaRolagem(){
         System.out.println(log.getStrUltimaRolagem());
     }
 

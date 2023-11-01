@@ -18,11 +18,12 @@ public class Main {
 //        System.out.println(D4.getLados());
 
         LancadorDeDados roladorLaEle = new LancadorDeDados();
+
         roladorLaEle.rolagemDeDados(10, TipoDado.D4);
         roladorLaEle.rolagemDeDados(3, TipoDado.D6);
         roladorLaEle.rolagemDeDados(6, TipoDado.D20);
         roladorLaEle.rolagemDeDados(4, TipoDado.D100);
-        roladorLaEle.mostrarUltimaRolagem();
+        roladorLaEle.imprimirUltimaRolagem();
         roladorLaEle.imprimirLog();
 
 //        roladorLaEle.rolagemDeDados(3, TipoDado.D100);
