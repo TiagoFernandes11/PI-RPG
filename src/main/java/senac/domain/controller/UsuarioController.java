@@ -1,61 +1,56 @@
 package senac.domain.controller;
 
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import senac.domain.model.Client;
-import senac.domain.repository.ClientRepository;
+import senac.domain.model.Usuario;
+import senac.domain.repository.UsuarioRepository;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api/clients")
-public class ClientController {
+@RequestMapping("/api/usuarios")
+public class UsuarioController {
 
-    private ClientRepository repository;
+    private UsuarioRepository repository;
 
-    public ClientController(ClientRepository repository) {
+    public UsuarioController(UsuarioRepository repository) {
         this.repository = repository;
     }
 
     @GetMapping
-    public List<Client> find(Client filtro ){
-        ExampleMatcher matcher = ExampleMatcher.matching().withIgnoreCase()
-                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING );
-        Example example = Example.of(filtro, matcher);
-        return repository.findAll(example);
+    public List<Usuario> getAllUsers(){
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Client findUserByID(@PathVariable Integer id){
+    public Usuario findUserByID(@PathVariable Integer id){
         return repository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND,"Cliente não encontrado"));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Client save(@RequestBody Client Client){
-        return repository.save(Client);
+    public Usuario save(@RequestBody Usuario usuario){
+        return repository.save(usuario);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete( @PathVariable Integer id ) {
-        repository.findById(id).map(Client -> {
-            repository.delete(Client);
-            return Client;
+        repository.findById(id).map(usuario -> {
+            repository.delete(usuario);
+            return usuario;
         }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Usuario não encontrado"));
     }
 
     @PutMapping()
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update( @PathVariable Integer id,@RequestBody Client Client){
+    public void update( @PathVariable Integer id,@RequestBody Usuario usuario){
         repository.findById(id).map(existingClient -> {
-            Client.setId(existingClient.getId());
-            repository.save(Client);
+            usuario.setCodusuario(existingClient.getCodusuario());
+            repository.save(usuario);
             return existingClient;}).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND,"Usuario não encontrado") );
     }

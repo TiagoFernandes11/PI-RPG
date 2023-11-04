@@ -3,12 +3,13 @@ create database if not exists projeto;
 
 use projeto;
 
-create table client(
-id integer(3) primary key auto_increment,
-email varchar(300) not null unique,
-password varchar(30) not null
-);
-
-insert into client values(null,"tiagofernandesribeiro@yahoo.com.br", "senha1234");
-
-select * from client;
+CREATE TABLE IF NOT EXISTS usuario (
+  codusuario int(3) primary key auto_increment,
+  usuario VARCHAR(16) NOT NULL,
+  email VARCHAR(255) NULL,
+  senha VARCHAR(32) NOT NULL,
+  datacriacao TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  imagem BLOB NOT NULL,
+  horasjogadas TIME NOT NULL);
+  
+  insert into usuario(codusuario,usuario,email,senha) values(null,"TiagoAnal", "tiagoanal@terra.com.br", "senha123");
