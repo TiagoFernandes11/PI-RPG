@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 @Data
 @AllArgsConstructor
@@ -13,21 +14,24 @@ public class Participante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer partner_id;
+    @GenericGenerator(name = "native", strategy = "native")
+    private Integer codparticipante;
 
     // pegar imagem padrão no do envio da foto ser nulo
     @Lob
-    @Column(name = "image_campaign", nullable = true)
-    private Byte[] image;
+    @Column(nullable = true)
+    private Byte[] imagem;
 
     @Column(nullable = false, unique = true, length = 100)
     private String nome;
 
     @Column(nullable = false, length = 30)
-    private String funcao;
+    private String cargo;
 
     @Column(nullable = false)
     private boolean Adm;
+
+    private Integer user_codusuario;
 
 
     //ver como ficaria a questão da foto
