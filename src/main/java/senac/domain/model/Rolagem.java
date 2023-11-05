@@ -23,8 +23,8 @@ public class Rolagem {
     @ManyToOne
     @JoinColumn(name = "campanha_codcampanha")
     private Campanha campanha;
-
     @ManyToOne
+
     @JoinColumn(name = "personagem_codpersonagem")
     private Personagem personagem;
 
