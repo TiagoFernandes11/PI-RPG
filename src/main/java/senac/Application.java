@@ -2,6 +2,7 @@ package senac;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,28 +19,10 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@SpringBootApplication
+@SpringBootApplication(exclude = AutoConfiguration.class)
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-    }
-
-    @Autowired
-    private PericiaRepository periciaRepository;
-    @Autowired
-    private ParticipanteRepository participanteRepository;
-
-
-    @Bean
-    @GetMapping("/participante")
-    public List<Participante> getParticipante(){
-        return participanteRepository.findAll();
-    }
-
-    @Bean
-    @GetMapping("/pericia")
-    public List<Pericia> getPericia(){
-        return periciaRepository.findAll();
     }
 
     @Bean
