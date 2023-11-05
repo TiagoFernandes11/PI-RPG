@@ -14,7 +14,7 @@ public class Pericias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codpericia")
-    private Long codPericia;
+    private Integer codPericia;
 
     @Column(name = "atletismo", length = 45)
     private String atletismo;

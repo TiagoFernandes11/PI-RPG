@@ -14,7 +14,7 @@ public class Atributos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codatributo")
-    private Long codAtributo;
+    private Integer codAtributo;
 
     @Column(name = "forca", length = 45)
     private String forca;
