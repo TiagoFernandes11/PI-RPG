@@ -15,6 +15,7 @@ import java.sql.Time;
 @NoArgsConstructor
 @Entity
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GenericGenerator(name = "native", strategy = "native")
