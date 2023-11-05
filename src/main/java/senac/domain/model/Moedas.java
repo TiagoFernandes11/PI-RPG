@@ -1,9 +1,5 @@
 package senac.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +13,6 @@ public class Moedas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codmoeda")
     private Integer codMoeda;
 
     @Column(name = "po", length = 45, columnDefinition = "VARCHAR(45) COMMENT 'peças de ouro'")
