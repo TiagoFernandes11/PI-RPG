@@ -105,6 +105,8 @@ public class Personagem {
     @Column(name = "tesouro", length = 45)
     private String tesouro;
 
+    private Moedas moedas;
+
     @ManyToOne
     @JoinColumn(name = "atributos_codatributo")
     private Atributos atributos;
