@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import senac.domain.model.Personagem;
 
 @Repository
-public interface PersogemRepository extends JpaRepository<Personagem, Integer> {
+public interface PersonagemRepository extends JpaRepository<Personagem, Integer> {
 }
