@@ -31,8 +31,5 @@ public class Participante {
     @Column(nullable = false)
     private boolean Adm;
 
-    private Integer user_codusuario;
-
-
     //ver como ficaria a questão da foto
 }

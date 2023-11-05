@@ -17,7 +17,6 @@ public class Moedas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codmoeda")
     private Integer codMoeda;
 
     @Column(name = "po", length = 45, columnDefinition = "VARCHAR(45) COMMENT 'peças de ouro'")
