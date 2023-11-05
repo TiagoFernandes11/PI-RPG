@@ -1,8 +1,14 @@
 package senac.domain.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "personagem")
 public class Personagem {
 
@@ -110,10 +116,4 @@ public class Personagem {
     @ManyToOne
     @JoinColumn(name = "pericias_codpericia")
     private Pericias pericias;
-
-    // Getters and setters (ou use Lombok para gerar automaticamente)
-
-    // Constructors (default and parameterized)
-
-    // You can also add other methods and business logic here.
 }
