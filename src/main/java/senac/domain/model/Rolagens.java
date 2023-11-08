@@ -5,15 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "rolagem")
-public class Rolagem {
+@Table(name = "rolagens")
+public class Rolagens {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
