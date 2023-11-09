@@ -2,8 +2,8 @@ package senac.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import senac.domain.model.Magias;
+import senac.domain.model.Magia;
 
 @Repository
-public interface MagiasRepository extends JpaRepository<Magias, Integer> {
+public interface MagiaRepository extends JpaRepository<Magia, Integer> {
 }

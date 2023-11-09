@@ -37,7 +37,7 @@ function cadastrar() {
 }
 
 function preencherArrayComEmailsCadastrados() {
-  return fetch("http://localhost:8080/api/clients")
+  return fetch("http://localhost:8080/api/usuarios")
     .then((data) => {
       return data.json();
     })

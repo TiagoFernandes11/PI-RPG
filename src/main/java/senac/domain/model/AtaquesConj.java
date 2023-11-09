@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import senac.domain.funcionalidades.funcionalidade_personagem.Equipamento;
+
 
 
 @Data
@@ -43,5 +43,5 @@ public class AtaquesConj {
     @ManyToOne
     @JoinColumn(name = "magias_codmagia", referencedColumnName = "codmagia",
             foreignKey = @ForeignKey(name = "fk_ataquesconj_magias1"))
-    private Magias magia;
+    private Magia magia;
 }

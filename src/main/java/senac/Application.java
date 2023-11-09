@@ -23,7 +23,7 @@ public class Application {
     @GetMapping("/cadastro")
     public ModelAndView hello(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("template/cadastro.html");
+        modelAndView.setViewName("cadastro.html");
         return modelAndView;
     }
 

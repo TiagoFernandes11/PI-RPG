@@ -10,7 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Magias {
+public class Magia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
